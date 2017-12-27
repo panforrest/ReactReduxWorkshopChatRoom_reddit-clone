@@ -5,12 +5,11 @@ import React from 'react'
 // }
 
 export default (props) => {
-	const post = props
 
 	return(
 		<div>
-	        <h3> {post.title} </h3>
-	        <p>{post.text}</p>
+	        <h3> {props.title} </h3>
+	        <p>{props.text}</p>
 		</div>
 	)		
 }

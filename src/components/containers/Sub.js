@@ -61,11 +61,7 @@ class Sub extends Component {
 	                    <h3>Title</h3>
 
                         { this.state.posts.map((post, i) => {
-                            return (
-                                <li key={i}>
-                            	    <Preview {...post} />
-                                </li>
-                                )
+                            return <Preview {...post} key={i} />
                             })
                         }
                     </div>
