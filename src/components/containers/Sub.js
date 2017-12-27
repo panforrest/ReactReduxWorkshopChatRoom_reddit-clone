@@ -42,6 +42,11 @@ class Sub extends Component {
 
     submitPost(){
         console.log('submitPost: '+JSON.stringify(this.state.nextPost))
+        let updatedPosts = Object.assign([], this.state.posts)
+        updatedPosts.push(this.state.nextPost)
+        this.setState({
+        	posts: updatedPosts
+        }) 
     }
 
 	render(){

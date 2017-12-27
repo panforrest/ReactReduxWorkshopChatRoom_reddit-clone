@@ -29910,6 +29910,11 @@ var Sub = function (_Component) {
         key: 'submitPost',
         value: function submitPost() {
             console.log('submitPost: ' + JSON.stringify(this.state.nextPost));
+            var updatedPosts = Object.assign([], this.state.posts);
+            updatedPosts.push(this.state.nextPost);
+            this.setState({
+                posts: updatedPosts
+            });
         }
     }, {
         key: 'render',
