@@ -29888,17 +29888,28 @@ var Sub = function (_Component) {
         value: function updateNextPost(attr, event) {
             console.log(attr + '==' + event.target.value);
 
-            if (attr == 'title') {
-                this.setState({
-                    title: event.target.value
-                });
-            }
+            // if (attr == 'title'){
+            // 	this.setState({
+            // 		title: event.target.value
+            // 	})
+            // }
 
-            if (attr == 'text') {
-                this.setState({
-                    text: event.target.value
-                });
-            }
+            // if (attr == 'text'){
+            // 	this.setState({
+            // 		text: event.target.value
+            // 	})
+            // }
+
+            var updated = Object.assign({}, this.state.nextPost);
+            updated[attr] = event.target.value;
+            this.setState({
+                nextPost: updated
+            });
+        }
+    }, {
+        key: 'submitPost',
+        value: function submitPost() {
+            console.log('submitPost: ' + JSON.stringify(this.state.nextPost));
         }
     }, {
         key: 'render',
@@ -29959,7 +29970,7 @@ var Sub = function (_Component) {
                         _react2.default.createElement('br', null),
                         _react2.default.createElement(
                             'button',
-                            null,
+                            { onClick: this.submitPost.bind(this) },
                             'Submit'
                         )
                     )

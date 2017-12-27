@@ -21,17 +21,27 @@ class Sub extends Component {
     updateNextPost(attr, event){
     	console.log(attr + '==' + event.target.value)
 
-    	if (attr == 'title'){
-    		this.setState({
-    			title: event.target.value
-    		})
-    	}
+    	// if (attr == 'title'){
+    	// 	this.setState({
+    	// 		title: event.target.value
+    	// 	})
+    	// }
 
-    	if (attr == 'text'){
-    		this.setState({
-    			text: event.target.value
-    		})
-    	}
+    	// if (attr == 'text'){
+    	// 	this.setState({
+    	// 		text: event.target.value
+    	// 	})
+    	// }
+
+    	let updated = Object.assign({}, this.state.nextPost)
+    	updated[attr] = event.target.value
+    	this.setState({
+    		nextPost: updated
+    	}) 
+    }
+
+    submitPost(){
+        console.log('submitPost: '+JSON.stringify(this.state.nextPost))
     }
 
 	render(){
@@ -60,7 +70,7 @@ class Sub extends Component {
 	                <h3>Submit Comment</h3>
 	                <input type="text" onChange={this.updateNextPost.bind(this, 'title')} placeholder="Title" className="form-control" /><br />
 	                <textarea onChange={this.updateNextPost.bind(this, 'text')} placeholder="Text" className="form-control"></textarea><br />
-	                <button>Submit</button>
+	                <button onClick={this.submitPost.bind(this)}>Submit</button>
 	            </div>
 
             </div>
