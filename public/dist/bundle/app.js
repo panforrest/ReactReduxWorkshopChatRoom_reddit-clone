@@ -29857,6 +29857,8 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _presentation = __webpack_require__(104);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29945,18 +29947,7 @@ var Sub = function (_Component) {
                                 return _react2.default.createElement(
                                     'li',
                                     { key: i },
-                                    _react2.default.createElement(
-                                        'h3',
-                                        null,
-                                        ' ',
-                                        post.title,
-                                        ' '
-                                    ),
-                                    _react2.default.createElement(
-                                        'p',
-                                        null,
-                                        post.text
-                                    )
+                                    _react2.default.createElement(_presentation.Preview, post)
                                 );
                             })
                         )
@@ -29988,6 +29979,68 @@ var Sub = function (_Component) {
 }(_react.Component);
 
 exports.default = Sub;
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Preview = undefined;
+
+var _Preview = __webpack_require__(105);
+
+var _Preview2 = _interopRequireDefault(_Preview);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.Preview = _Preview2.default;
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// class Preview (props) => {
+
+// }
+
+exports.default = function (props) {
+	var post = props;
+
+	return _react2.default.createElement(
+		'div',
+		null,
+		_react2.default.createElement(
+			'h3',
+			null,
+			' ',
+			post.title,
+			' '
+		),
+		_react2.default.createElement(
+			'p',
+			null,
+			post.text
+		)
+	);
+};
 
 /***/ })
 ],[28]);

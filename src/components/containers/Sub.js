@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Preview } from '../presentation'
 
 class Sub extends Component {
     constructor(){
@@ -61,10 +62,9 @@ class Sub extends Component {
 
                         { this.state.posts.map((post, i) => {
                             return (
-                            	<li key={i}>
-                                    <h3> {post.title} </h3>
-                                    <p>{post.text}</p>
-                            	</li>
+                                <li key={i}>
+                            	    <Preview {...post} />
+                                </li>
                                 )
                             })
                         }
