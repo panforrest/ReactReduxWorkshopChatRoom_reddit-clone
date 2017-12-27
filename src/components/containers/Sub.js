@@ -4,6 +4,10 @@ class Sub extends Component {
     constructor(){
     	super()
     	this.state = {
+    		nextPost: {
+    			title: '',
+                text: ''
+    		},
     		posts: [
     		    {title:'iPhone X Released!', text:'check out the new iPhone X'},
     		    {title:'Elon Musk Elected President', text:'Beat Trump by 90%'},
@@ -11,6 +15,22 @@ class Sub extends Component {
     		    {title:'iPhone X Released!', text:'check out the new iPhone X'},
     		    {title:'iPhone X Released!', text:'check out the new iPhone X'},
     		]
+    	}
+    }
+
+    updateNextPost(attr, event){
+    	console.log(attr + '==' + event.target.value)
+
+    	if (attr == 'title'){
+    		this.setState({
+    			title: event.target.value
+    		})
+    	}
+
+    	if (attr == 'text'){
+    		this.setState({
+    			text: event.target.value
+    		})
     	}
     }
 
@@ -38,8 +58,8 @@ class Sub extends Component {
 
                 <div className="col-md-4">
 	                <h3>Submit Comment</h3>
-	                <input type="text" placeholder="Title" className="form-control" /><br />
-	                <textarea placeholder="Title" className="form-control"></textarea><br />
+	                <input type="text" onChange={this.updateNextPost.bind(this, 'title')} placeholder="Title" className="form-control" /><br />
+	                <textarea onChange={this.updateNextPost.bind(this, 'text')} placeholder="Text" className="form-control"></textarea><br />
 	                <button>Submit</button>
 	            </div>
 

@@ -29874,12 +29874,33 @@ var Sub = function (_Component) {
         var _this = _possibleConstructorReturn(this, (Sub.__proto__ || Object.getPrototypeOf(Sub)).call(this));
 
         _this.state = {
+            nextPost: {
+                title: '',
+                text: ''
+            },
             posts: [{ title: 'iPhone X Released!', text: 'check out the new iPhone X' }, { title: 'Elon Musk Elected President', text: 'Beat Trump by 90%' }, { title: 'Elone Musk !', text: 'check out the new iPhone X' }, { title: 'iPhone X Released!', text: 'check out the new iPhone X' }, { title: 'iPhone X Released!', text: 'check out the new iPhone X' }]
         };
         return _this;
     }
 
     _createClass(Sub, [{
+        key: 'updateNextPost',
+        value: function updateNextPost(attr, event) {
+            console.log(attr + '==' + event.target.value);
+
+            if (attr == 'title') {
+                this.setState({
+                    title: event.target.value
+                });
+            }
+
+            if (attr == 'text') {
+                this.setState({
+                    text: event.target.value
+                });
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
@@ -29932,9 +29953,9 @@ var Sub = function (_Component) {
                             null,
                             'Submit Comment'
                         ),
-                        _react2.default.createElement('input', { type: 'text', placeholder: 'Title', className: 'form-control' }),
+                        _react2.default.createElement('input', { type: 'text', onChange: this.updateNextPost.bind(this, 'title'), placeholder: 'Title', className: 'form-control' }),
                         _react2.default.createElement('br', null),
-                        _react2.default.createElement('textarea', { placeholder: 'Title', className: 'form-control' }),
+                        _react2.default.createElement('textarea', { onChange: this.updateNextPost.bind(this, 'text'), placeholder: 'Text', className: 'form-control' }),
                         _react2.default.createElement('br', null),
                         _react2.default.createElement(
                             'button',
