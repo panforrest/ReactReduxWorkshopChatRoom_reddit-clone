@@ -30097,6 +30097,9 @@ exports.default = function () {
 	switch (action.type) {
 		case 'POST_ADDED':
 			console.log('POST_ADDED: ' + JSON.stringify(action.data));
+			var updatedPost = Object.assign([], updated.all);
+			updatedPost.push(action.data);
+			updated['all'] = updatedPost;
 			return updated;
 
 		default:

@@ -13,6 +13,9 @@ export default (state=initialState, action) => {
 	switch(action.type){
         case 'POST_ADDED':
             console.log('POST_ADDED: '+JSON.stringify(action.data))
+            const updatedPost = Object.assign([], updated.all)
+            updatedPost.push(action.data)
+            updated['all'] = updatedPost
             return updated
 
 		default:
