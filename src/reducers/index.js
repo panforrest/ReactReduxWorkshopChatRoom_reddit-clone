@@ -5,9 +5,11 @@
 
 
 import userReducer from './userReducer'
+import postReducer from './postReducer'
 
 export {
 	
-	userReducer
+	userReducer,
+	postReducer
 	
 }

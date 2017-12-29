@@ -6748,6 +6748,21 @@ request.put = function(url, data, fn) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(36);
+} else {
+  module.exports = __webpack_require__(37);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 
 
 /**
@@ -6786,25 +6801,10 @@ emptyFunction.thatReturnsArgument = function (arg) {
 module.exports = emptyFunction;
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Promise=__webpack_require__(1);module.exports={validateSiteId:function(e){return null!=e.site_id&&!(e.site_id.length<20)},standardHeaders:function(e){var i={Accept:"application/json"};return i[e.turbo_app_header]=e.site_id,i}};
-
-/***/ }),
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(36);
-} else {
-  module.exports = __webpack_require__(37);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+var Promise=__webpack_require__(1);module.exports={validateSiteId:function(e){return null!=e.site_id&&!(e.site_id.length<20)},standardHeaders:function(e){var i={Accept:"application/json"};return i[e.turbo_app_header]=e.site_id,i}};
 
 /***/ }),
 /* 6 */
@@ -7002,7 +7002,7 @@ module.exports = emptyObject;
 
 
 
-var emptyFunction = __webpack_require__(3);
+var emptyFunction = __webpack_require__(4);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -7324,7 +7324,7 @@ module.exports = ExecutionEnvironment;
  * @typechecks
  */
 
-var emptyFunction = __webpack_require__(3);
+var emptyFunction = __webpack_require__(4);
 
 /**
  * Upstream version of event listener. Does not take into account specific
@@ -8066,7 +8066,7 @@ var storeShape = __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.shape({
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_Subscription__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_PropTypes__ = __webpack_require__(29);
@@ -8482,7 +8482,7 @@ module.exports = isObject;
 /* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Promise=__webpack_require__(1),superagent=__webpack_require__(2),helper=__webpack_require__(4),IndexDB=function(e){var r=e;return{dbTransaction:function(e){if("undefined"==typeof window)return null;if(window){if(null==r.site_id){var n=new Error("Please Set Your TURBO_APP_ID");return void e(n,null)}if(r.site_id.length<20){var n=new Error("Please Set Your TURBO_APP_ID");return void e(n,null)}var t=window.indexedDB||window.mozIndexedDB||window.webkitIndexedDB||window.msIndexedDB||window.shimIndexedDB;if(null==t)return null;if(void 0==t)return null;var o=t.open("turbo",1);return o.onupgradeneeded=function(){var e=o.result;e.createObjectStore("MyObjectStore",{keyPath:"id"})},o.onsuccess=function(){var r=o.result,n=r.transaction("MyObjectStore","readwrite"),t=n.objectStore("MyObjectStore");e(null,t),n.oncomplete=function(){r.close()}},o}}}};module.exports=IndexDB;
+var Promise=__webpack_require__(1),superagent=__webpack_require__(2),helper=__webpack_require__(5),IndexDB=function(e){var r=e;return{dbTransaction:function(e){if("undefined"==typeof window)return null;if(window){if(null==r.site_id){var n=new Error("Please Set Your TURBO_APP_ID");return void e(n,null)}if(r.site_id.length<20){var n=new Error("Please Set Your TURBO_APP_ID");return void e(n,null)}var t=window.indexedDB||window.mozIndexedDB||window.webkitIndexedDB||window.msIndexedDB||window.shimIndexedDB;if(null==t)return null;if(void 0==t)return null;var o=t.open("turbo",1);return o.onupgradeneeded=function(){var e=o.result;e.createObjectStore("MyObjectStore",{keyPath:"id"})},o.onsuccess=function(){var r=o.result,n=r.transaction("MyObjectStore","readwrite"),t=n.objectStore("MyObjectStore");e(null,t),n.oncomplete=function(){r.close()}},o}}}};module.exports=IndexDB;
 
 /***/ }),
 /* 35 */
@@ -8491,7 +8491,7 @@ var Promise=__webpack_require__(1),superagent=__webpack_require__(2),helper=__we
 "use strict";
 
 
-var _react = __webpack_require__(5);
+var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -8534,7 +8534,7 @@ _reactDom2.default.render(app, document.getElementById('root'));
  * LICENSE file in the root directory of this source tree.
  */
 
-var m=__webpack_require__(6),n=__webpack_require__(8),p=__webpack_require__(3),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
+var m=__webpack_require__(6),n=__webpack_require__(8),p=__webpack_require__(4),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
 function y(a){for(var b=arguments.length-1,e="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,c=0;c<b;c++)e+="\x26args[]\x3d"+encodeURIComponent(arguments[c+1]);b=Error(e+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var z={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function A(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}A.prototype.isReactComponent={};A.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?y("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};A.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function B(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}function C(){}C.prototype=A.prototype;var D=B.prototype=new C;D.constructor=B;m(D,A.prototype);D.isPureReactComponent=!0;function E(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}var F=E.prototype=new C;F.constructor=E;m(F,A.prototype);F.unstable_isAsyncReactComponent=!0;F.render=function(){return this.props.children};var G={current:null},H=Object.prototype.hasOwnProperty,I={key:!0,ref:!0,__self:!0,__source:!0};
@@ -8574,7 +8574,7 @@ var _assign = __webpack_require__(6);
 var emptyObject = __webpack_require__(8);
 var invariant = __webpack_require__(7);
 var warning = __webpack_require__(9);
-var emptyFunction = __webpack_require__(3);
+var emptyFunction = __webpack_require__(4);
 var checkPropTypes = __webpack_require__(11);
 
 // TODO: this is special because it gets imported during build.
@@ -9976,7 +9976,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(5),l=__webpack_require__(15),B=__webpack_require__(6),C=__webpack_require__(3),ba=__webpack_require__(16),da=__webpack_require__(17),ea=__webpack_require__(18),fa=__webpack_require__(19),ia=__webpack_require__(20),D=__webpack_require__(8);
+var aa=__webpack_require__(3),l=__webpack_require__(15),B=__webpack_require__(6),C=__webpack_require__(4),ba=__webpack_require__(16),da=__webpack_require__(17),ea=__webpack_require__(18),fa=__webpack_require__(19),ia=__webpack_require__(20),D=__webpack_require__(8);
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -10273,12 +10273,12 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var React = __webpack_require__(5);
+var React = __webpack_require__(3);
 var invariant = __webpack_require__(7);
 var warning = __webpack_require__(9);
 var ExecutionEnvironment = __webpack_require__(15);
 var _assign = __webpack_require__(6);
-var emptyFunction = __webpack_require__(3);
+var emptyFunction = __webpack_require__(4);
 var EventListener = __webpack_require__(16);
 var getActiveElement = __webpack_require__(17);
 var shallowEqual = __webpack_require__(18);
@@ -25830,13 +25830,6 @@ var _reducers = __webpack_require__(64);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * *
-	This is a store with one reducer: userReducer. When 
-	adding more reducers, make sure to include them in 
-	line 3 (above) and line 18 (below):
-* * * * * * * * * * * * * * * * * * * * * * * * * * * *
-*/
-
 var store;
 exports.default = {
 
@@ -25844,7 +25837,8 @@ exports.default = {
 		// initialState can be null
 
 		var reducers = (0, _redux.combineReducers)({ // insert reducers here
-			user: _reducers.userReducer
+			user: _reducers.userReducer,
+			post: _reducers.postReducer
 		});
 
 		if (initialState) {
@@ -26475,18 +26469,25 @@ exports['default'] = thunk;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.userReducer = undefined;
+exports.postReducer = exports.userReducer = undefined;
 
 var _userReducer = __webpack_require__(65);
 
 var _userReducer2 = _interopRequireDefault(_userReducer);
 
+var _postReducer = __webpack_require__(105);
+
+var _postReducer2 = _interopRequireDefault(_postReducer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.userReducer = _userReducer2.default; /* * * * * * * * * * * * * * * * * * * * * * * * * * *
-                                             	Export your reducers here
-                                             * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-                                             */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * *
+	Export your reducers here
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*/
+
+exports.userReducer = _userReducer2.default;
+exports.postReducer = _postReducer2.default;
 
 /***/ }),
 /* 65 */
@@ -26550,7 +26551,7 @@ exports.default = function () {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony export (immutable) */ __webpack_exports__["a"] = createProvider;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
@@ -26644,7 +26645,7 @@ function createProvider() {
 
 
 
-var emptyFunction = __webpack_require__(3);
+var emptyFunction = __webpack_require__(4);
 var invariant = __webpack_require__(7);
 var warning = __webpack_require__(9);
 var assign = __webpack_require__(6);
@@ -27194,7 +27195,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 
 
-var emptyFunction = __webpack_require__(3);
+var emptyFunction = __webpack_require__(4);
 var invariant = __webpack_require__(7);
 var ReactPropTypesSecret = __webpack_require__(12);
 
@@ -27921,7 +27922,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(5);
+var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -29781,43 +29782,43 @@ exports.clearImmediate = clearImmediate;
 /* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Promise=__webpack_require__(1),superagent=__webpack_require__(2),helper=__webpack_require__(4),StripeUtils=function(e){var r=e;return{createStripeAccount:function(e){return new Promise(function(i,n){return null==r.site_id?void n(new Error("Please Set Your TURBO_APP_ID")):r.site_id.length<20?void n(new Error("Please Set Your TURBO_APP_ID")):null==e.stripeRef?void n(new Error("Missing stripeRef")):null==e.client?void n(new Error("Missing Client Parameter")):null==e.stripeToken?void n(new Error("Missing StripeToken Parameter")):void e.stripeRef.customers.create({description:e.client._id.toString(),source:e.stripeToken},function(r,t){if(r)return void n(r);var o=t.sources.data[0];e.client.stripeId=t.id,e.client.creditCard={id:t.id,lastFour:o.last4,exp_month:o.exp_month,exp_year:o.exp_year,brand:o.brand},i(e.client)})})},createStripeCharge:function(e){return new Promise(function(i,n){return null==r.site_id?void n(new Error("Please Set Your TURBO_APP_ID")):r.site_id.length<20?void n(new Error("Please Set Your TURBO_APP_ID")):null==e.stripeRef?void n(new Error("Missing stripeRef")):null==e.amount?void n(new Error("Missing Amount Parameter")):null==e.stripeToken?void n(new Error("Missing StripeToken Parameter")):null==e.description?void n(new Error("Missing Description Parameter")):void e.stripeRef.charges.create({amount:100*e.amount,currency:"usd",source:e.stripeToken,description:e.description},function(e,r){if(e)return void n(e);i(r)})})},recurringCharge:function(e){return new Promise(function(i,n){return null==r.site_id?void n(new Error("Please Set Your TURBO_APP_ID")):r.site_id.length<20?void n(new Error("Please Set Your TURBO_APP_ID")):null==e.stripeRef?void n(new Error("Missing stripeRef")):null==e.amount?void n(new Error("Missing amount parameter")):null==e.customerId?void n(new Error("Missing customerId parameter")):null==e.description?void n(new Error("Missing description parameter")):void e.stripeRef.charges.create({amount:100*e.amount,currency:"usd",customer:e.customerId,description:e.description},function(e,r){if(e)return void n(e);i(r)})})},initializeStripe:function(e){return new Promise(function(i,n){if(null==r.site_id)return void n(new Error("Please Set Your TURBO_APP_ID"));if(r.site_id.length<20)return void n(new Error("Please Set Your TURBO_APP_ID"));if(null==e.stripePublicKey)return void n(new Error("Missing stripePublicKey"));if(null==e.text)return void n(new Error("Missing text"));if(null==e.callback)return void n(new Error("Missing callback"));var t=e.image||"/images/logo_260.png",o=e.withAddress||!0;i(StripeCheckout.configure({key:e.stripePublicKey,image:t,address:o,locale:"auto",panelLabel:e.text,token:function(r){e.callback(r)},closed:function(){e.onClosed&&e.onClosed()}}))})},submitStripeCharge:function(e,i){return new Promise(function(n,t){if(null==e)return void t(new Error("Missing Stripe Token"));if(null==r.site_id)return void t(new Error("Please Set Your TURBO_APP_ID"));if(r.site_id.length<20)return void t(new Error("Please Set Your TURBO_APP_ID"));var o={site:r.site_id,exec:"create-stripe-charge",stripeToken:e.id,email:e.email,name:e.card.name,amount:i.price,description:i.description};superagent.post(r.base_url+"/functions").send(o).set({Accept:"application/json"}).end(function(e,r){return e?void t(e):"success"!=r.body.confirmation?void t({message:r.body.message}):void n(r.body)})})},submitStripeCard:function(e){return new Promise(function(i,n){if(null==e)return void n(new Error("Missing Stripe Token"));if(null==r.site_id)return void n(new Error("Please Set Your TURBO_APP_ID"));if(r.site_id.length<20)return void n(new Error("Please Set Your TURBO_APP_ID"));var t={site:r.site_id,stripeToken:e.id,email:e.email,name:e.card.name};superagent.post(r.turbo_platform_url+"/create-stripe-customer").send(t).set({Accept:"application/json"}).end(function(e,r){return e?void n(e):"success"!=r.body.confirmation?void n({message:r.body.message}):void i(r.body)})})}}};module.exports=StripeUtils;
+var Promise=__webpack_require__(1),superagent=__webpack_require__(2),helper=__webpack_require__(5),StripeUtils=function(e){var r=e;return{createStripeAccount:function(e){return new Promise(function(i,n){return null==r.site_id?void n(new Error("Please Set Your TURBO_APP_ID")):r.site_id.length<20?void n(new Error("Please Set Your TURBO_APP_ID")):null==e.stripeRef?void n(new Error("Missing stripeRef")):null==e.client?void n(new Error("Missing Client Parameter")):null==e.stripeToken?void n(new Error("Missing StripeToken Parameter")):void e.stripeRef.customers.create({description:e.client._id.toString(),source:e.stripeToken},function(r,t){if(r)return void n(r);var o=t.sources.data[0];e.client.stripeId=t.id,e.client.creditCard={id:t.id,lastFour:o.last4,exp_month:o.exp_month,exp_year:o.exp_year,brand:o.brand},i(e.client)})})},createStripeCharge:function(e){return new Promise(function(i,n){return null==r.site_id?void n(new Error("Please Set Your TURBO_APP_ID")):r.site_id.length<20?void n(new Error("Please Set Your TURBO_APP_ID")):null==e.stripeRef?void n(new Error("Missing stripeRef")):null==e.amount?void n(new Error("Missing Amount Parameter")):null==e.stripeToken?void n(new Error("Missing StripeToken Parameter")):null==e.description?void n(new Error("Missing Description Parameter")):void e.stripeRef.charges.create({amount:100*e.amount,currency:"usd",source:e.stripeToken,description:e.description},function(e,r){if(e)return void n(e);i(r)})})},recurringCharge:function(e){return new Promise(function(i,n){return null==r.site_id?void n(new Error("Please Set Your TURBO_APP_ID")):r.site_id.length<20?void n(new Error("Please Set Your TURBO_APP_ID")):null==e.stripeRef?void n(new Error("Missing stripeRef")):null==e.amount?void n(new Error("Missing amount parameter")):null==e.customerId?void n(new Error("Missing customerId parameter")):null==e.description?void n(new Error("Missing description parameter")):void e.stripeRef.charges.create({amount:100*e.amount,currency:"usd",customer:e.customerId,description:e.description},function(e,r){if(e)return void n(e);i(r)})})},initializeStripe:function(e){return new Promise(function(i,n){if(null==r.site_id)return void n(new Error("Please Set Your TURBO_APP_ID"));if(r.site_id.length<20)return void n(new Error("Please Set Your TURBO_APP_ID"));if(null==e.stripePublicKey)return void n(new Error("Missing stripePublicKey"));if(null==e.text)return void n(new Error("Missing text"));if(null==e.callback)return void n(new Error("Missing callback"));var t=e.image||"/images/logo_260.png",o=e.withAddress||!0;i(StripeCheckout.configure({key:e.stripePublicKey,image:t,address:o,locale:"auto",panelLabel:e.text,token:function(r){e.callback(r)},closed:function(){e.onClosed&&e.onClosed()}}))})},submitStripeCharge:function(e,i){return new Promise(function(n,t){if(null==e)return void t(new Error("Missing Stripe Token"));if(null==r.site_id)return void t(new Error("Please Set Your TURBO_APP_ID"));if(r.site_id.length<20)return void t(new Error("Please Set Your TURBO_APP_ID"));var o={site:r.site_id,exec:"create-stripe-charge",stripeToken:e.id,email:e.email,name:e.card.name,amount:i.price,description:i.description};superagent.post(r.base_url+"/functions").send(o).set({Accept:"application/json"}).end(function(e,r){return e?void t(e):"success"!=r.body.confirmation?void t({message:r.body.message}):void n(r.body)})})},submitStripeCard:function(e){return new Promise(function(i,n){if(null==e)return void n(new Error("Missing Stripe Token"));if(null==r.site_id)return void n(new Error("Please Set Your TURBO_APP_ID"));if(r.site_id.length<20)return void n(new Error("Please Set Your TURBO_APP_ID"));var t={site:r.site_id,stripeToken:e.id,email:e.email,name:e.card.name};superagent.post(r.turbo_platform_url+"/create-stripe-customer").send(t).set({Accept:"application/json"}).end(function(e,r){return e?void n(e):"success"!=r.body.confirmation?void n({message:r.body.message}):void i(r.body)})})}}};module.exports=StripeUtils;
 
 /***/ }),
 /* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Promise=__webpack_require__(1),superagent=__webpack_require__(2),IndexDB=__webpack_require__(34),helper=__webpack_require__(4),Auth=function(e){var r=e;return{login:function(n){return new Promise(function(t,i){return 0==helper.validateSiteId(e)?void i(new Error("Please Set Your TURBO_APP_ID")):null==n?void i(new Error("Post parameters required.")):(n.site=r.site_id,void superagent.post(r.base_url+"/auth/login").send(n).set("Accept","application/json").end(function(e,n){if(e)return void i(e);var o=n.body;if("success"!=o.confirmation){var u=o.message||"Login Failed";return void i(new Error(u))}var d=o.user||o.result;if("undefined"==typeof window)return void t(d);var s=IndexDB(r);if(null==s)return void t(d);s.dbTransaction(function(e,n){if(e)return void i(e);n.put({id:r.site_id,token:o.token}),t(d)})}))})},logout:function(){return new Promise(function(n,t){if(0==helper.validateSiteId(e))return void t(new Error("Please Set Your TURBO_APP_ID"));if("undefined"==typeof window)return void n(null);var i=IndexDB(r);if(null==i)return void n(null);i.dbTransaction(function(e,i){if(e)return void t(e);var o=i.delete(r.site_id);o.onsuccess=function(){console.log("Token Removed"),n(null)},o.onerror=function(e){t(e.target)}})})},currentUser:function(){return new Promise(function(e,n){if("undefined"==typeof window)return void e(null);var t=IndexDB(r);if(null==t)return void e(null);t.dbTransaction(function(t,i){if(t)return void n(t);var o=i.get(r.site_id);o.onsuccess=function(){if(null==o.result)return void n(new Error("Not Logged In"));superagent.get(r.base_url+"/auth/currentuser").query(null).set("Accept","application/json").set("turbo-token",o.result.token).end(function(r,t){if(r)return void n(r);if("success"!=t.body.confirmation)return void n(new Error(t.body.message));var i=t.body.user||t.body.result;e(i)})},o.onerror=function(e){n(e.target)}})})},createUser:function(n){return new Promise(function(t,i){return 0==helper.validateSiteId(e)?void i(new Error("Please Set Your TURBO_APP_ID")):null==n?void i(new Error("Post parameters required.")):(n.site=r.site_id,void superagent.post(r.base_url+"/auth/createuser").send(n).set("Accept","application/json").end(function(e,n){if(e)return void i(e);var o=n.body;if("success"!=o.confirmation){var u=o.message||"Registration Failed";return void i(new Error(u))}var d=o.user||o.result;if("undefined"==typeof window)return console.log("Window undefined!"),void t(d);var s=IndexDB(r);if(null==s)return void t(d);s.dbTransaction(function(e,n){if(e)return void i(e);n.put({id:r.site_id,token:o.token}),t(d)})}))})},fetchUser:function(n){return new Promise(function(t,i){if(0==helper.validateSiteId(e))return void i(new Error("Please Set Your TURBO_APP_ID"));superagent.get(r.base_url+"/api/user/"+n).query(null).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void i(e);if("success"!=r.body.confirmation)return void i(new Error(r.body.message));var n=r.body.result||r.body.user;t(n)})})},updateUser:function(n,t){return new Promise(function(i,o){return 0==helper.validateSiteId(e)?void o(new Error("Please Set Your TURBO_APP_ID")):null==t?void o(new Error("Updated parameters required.")):void superagent.put(r.base_url+"/api/user/"+n).send(t).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void o(e);if("success"!=r.body.confirmation)return void o(new Error(r.body.message));var n=r.body.result||r.body.user;i(n)})})},deleteUser:function(n){return new Promise(function(t,i){if(0==helper.validateSiteId(e))return void i(new Error("Please Set Your TURBO_APP_ID"));superagent.delete(r.base_url+"/api/user/"+n).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void i(e);if("fail"==r.body.confirmation)return void i(new Error(r.body.message));var n=r.body.result||r.body.results;t(n)})})}}};module.exports=Auth;
+var Promise=__webpack_require__(1),superagent=__webpack_require__(2),IndexDB=__webpack_require__(34),helper=__webpack_require__(5),Auth=function(e){var r=e;return{login:function(n){return new Promise(function(t,i){return 0==helper.validateSiteId(e)?void i(new Error("Please Set Your TURBO_APP_ID")):null==n?void i(new Error("Post parameters required.")):(n.site=r.site_id,void superagent.post(r.base_url+"/auth/login").send(n).set("Accept","application/json").end(function(e,n){if(e)return void i(e);var o=n.body;if("success"!=o.confirmation){var u=o.message||"Login Failed";return void i(new Error(u))}var d=o.user||o.result;if("undefined"==typeof window)return void t(d);var s=IndexDB(r);if(null==s)return void t(d);s.dbTransaction(function(e,n){if(e)return void i(e);n.put({id:r.site_id,token:o.token}),t(d)})}))})},logout:function(){return new Promise(function(n,t){if(0==helper.validateSiteId(e))return void t(new Error("Please Set Your TURBO_APP_ID"));if("undefined"==typeof window)return void n(null);var i=IndexDB(r);if(null==i)return void n(null);i.dbTransaction(function(e,i){if(e)return void t(e);var o=i.delete(r.site_id);o.onsuccess=function(){console.log("Token Removed"),n(null)},o.onerror=function(e){t(e.target)}})})},currentUser:function(){return new Promise(function(e,n){if("undefined"==typeof window)return void e(null);var t=IndexDB(r);if(null==t)return void e(null);t.dbTransaction(function(t,i){if(t)return void n(t);var o=i.get(r.site_id);o.onsuccess=function(){if(null==o.result)return void n(new Error("Not Logged In"));superagent.get(r.base_url+"/auth/currentuser").query(null).set("Accept","application/json").set("turbo-token",o.result.token).end(function(r,t){if(r)return void n(r);if("success"!=t.body.confirmation)return void n(new Error(t.body.message));var i=t.body.user||t.body.result;e(i)})},o.onerror=function(e){n(e.target)}})})},createUser:function(n){return new Promise(function(t,i){return 0==helper.validateSiteId(e)?void i(new Error("Please Set Your TURBO_APP_ID")):null==n?void i(new Error("Post parameters required.")):(n.site=r.site_id,void superagent.post(r.base_url+"/auth/createuser").send(n).set("Accept","application/json").end(function(e,n){if(e)return void i(e);var o=n.body;if("success"!=o.confirmation){var u=o.message||"Registration Failed";return void i(new Error(u))}var d=o.user||o.result;if("undefined"==typeof window)return console.log("Window undefined!"),void t(d);var s=IndexDB(r);if(null==s)return void t(d);s.dbTransaction(function(e,n){if(e)return void i(e);n.put({id:r.site_id,token:o.token}),t(d)})}))})},fetchUser:function(n){return new Promise(function(t,i){if(0==helper.validateSiteId(e))return void i(new Error("Please Set Your TURBO_APP_ID"));superagent.get(r.base_url+"/api/user/"+n).query(null).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void i(e);if("success"!=r.body.confirmation)return void i(new Error(r.body.message));var n=r.body.result||r.body.user;t(n)})})},updateUser:function(n,t){return new Promise(function(i,o){return 0==helper.validateSiteId(e)?void o(new Error("Please Set Your TURBO_APP_ID")):null==t?void o(new Error("Updated parameters required.")):void superagent.put(r.base_url+"/api/user/"+n).send(t).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void o(e);if("success"!=r.body.confirmation)return void o(new Error(r.body.message));var n=r.body.result||r.body.user;i(n)})})},deleteUser:function(n){return new Promise(function(t,i){if(0==helper.validateSiteId(e))return void i(new Error("Please Set Your TURBO_APP_ID"));superagent.delete(r.base_url+"/api/user/"+n).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void i(e);if("fail"==r.body.confirmation)return void i(new Error(r.body.message));var n=r.body.result||r.body.results;t(n)})})}}};module.exports=Auth;
 
 /***/ }),
 /* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Promise=__webpack_require__(1),superagent=__webpack_require__(2),helper=__webpack_require__(4),Functions=function(e){var r=e;return{executeFunction:function(e){return new Promise(function(n,i){return r.site_id.length<20?void i(new Error("Please Set Your TURBO_APP_ID")):null==e?void i(new Error("Post parameters required.")):null==e.exec?void i(new Error("Missing Exec Parameter")):(e.site=r.site_id,void superagent.post(r.base_url+"/functions").send(parameters).set("Accept","application/json").end(function(e,r){if(e)return void i(e);var t=r.body;if("success"!=t.confirmation)return void i(new Error(t.message));n(t)}))})}}};module.exports=Functions;
+var Promise=__webpack_require__(1),superagent=__webpack_require__(2),helper=__webpack_require__(5),Functions=function(e){var r=e;return{executeFunction:function(e){return new Promise(function(n,i){return r.site_id.length<20?void i(new Error("Please Set Your TURBO_APP_ID")):null==e?void i(new Error("Post parameters required.")):null==e.exec?void i(new Error("Missing Exec Parameter")):(e.site=r.site_id,void superagent.post(r.base_url+"/functions").send(parameters).set("Accept","application/json").end(function(e,r){if(e)return void i(e);var t=r.body;if("success"!=t.confirmation)return void i(new Error(t.message));n(t)}))})}}};module.exports=Functions;
 
 /***/ }),
 /* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Promise=__webpack_require__(1),superagent=__webpack_require__(2),helper=__webpack_require__(4),Platform=function(e){var r=e;return{site:function(){return new Promise(function(e,t){if(null==r.site_id)return void t(new Error("Please Set Your TURBO_APP_ID"));if(r.site_id.length<20)return void t(new Error("Please Set Your TURBO_APP_ID"));var i=r.turbo_url+"/api/site/"+r.site_id;superagent.get(i).query(null).set("Accept","application/json").end(function(r,i){if(r)return void t(r);var n=i.body;if("success"!=n.confirmation)return void t(new Error(n.message));e(n.result)})})},fetchSites:function(e){return new Promise(function(t,i){if(null==r.site_id)return void i(new Error("Please Set Your TURBO_APP_ID"));if(r.site_id.length<20)return void i(new Error("Please Set Your TURBO_APP_ID"));var n=r.turbo_url+"/api/site";superagent.get(n).query(e).set("Accept","application/json").end(function(e,r){if(e)return void i(e);var n=r.body;if("success"!=n.confirmation)return void i(new Error(n.message));var u=n.results||n.result;t(u)})})}}};module.exports=Platform;
+var Promise=__webpack_require__(1),superagent=__webpack_require__(2),helper=__webpack_require__(5),Platform=function(e){var r=e;return{site:function(){return new Promise(function(e,t){if(null==r.site_id)return void t(new Error("Please Set Your TURBO_APP_ID"));if(r.site_id.length<20)return void t(new Error("Please Set Your TURBO_APP_ID"));var i=r.turbo_url+"/api/site/"+r.site_id;superagent.get(i).query(null).set("Accept","application/json").end(function(r,i){if(r)return void t(r);var n=i.body;if("success"!=n.confirmation)return void t(new Error(n.message));e(n.result)})})},fetchSites:function(e){return new Promise(function(t,i){if(null==r.site_id)return void i(new Error("Please Set Your TURBO_APP_ID"));if(r.site_id.length<20)return void i(new Error("Please Set Your TURBO_APP_ID"));var n=r.turbo_url+"/api/site";superagent.get(n).query(e).set("Accept","application/json").end(function(e,r){if(e)return void i(e);var n=r.body;if("success"!=n.confirmation)return void i(new Error(n.message));var u=n.results||n.result;t(u)})})}}};module.exports=Platform;
 
 /***/ }),
 /* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Promise=__webpack_require__(1),superagent=__webpack_require__(2),helper=__webpack_require__(4),TurboStorage=function(e){var n=e;return{uploadFile:function(e){return new Promise(function(r,t){if(null==e)return void t(new Error("Missing file"));if(null==e.name)return void t(new Error("Missing file name"));if(null==e.type)return void t(new Error("Missing file type"));var i={site:n.site_id,exec:"upload-string",filename:e.name,filetype:e.type};superagent.post(n.base_url+"/functions").send(i).set("Content-Type","application/json").end(function(i,o){if(i)return void t(i);var s=o.body;if("success"!=s.confirmation)return void t(new Error(s.message));var u=s.result;if(-1==e.type.indexOf("image"))return void superagent.put(u).send(e).set("Content-Type",e.type).end(function(i,o){if(i)return void t(i);var u={site:n.site_id,name:e.name,type:e.type,size:e.size,url:"https://storage.turbo360.co/"+s.site.slug+"/"+e.name};superagent.post(n.turbo_url+"/api/blob").send(u).set("Accept","application/json").end(function(e,n){if(e)return void t(e);r(n.body)})});var a=superagent.post(u);a.attach("file",e),a.end(function(i,o){if(i)return void t(i);var s=o.body.image,u={site:n.site_id,name:e.name,type:e.type,size:e.size,url:s.address};superagent.post(n.turbo_url+"/api/blob").send(u).set("Accept","application/json").end(function(e,n){if(e)return void t(e);r(n.body)})})})})}}};module.exports=TurboStorage;
+var Promise=__webpack_require__(1),superagent=__webpack_require__(2),helper=__webpack_require__(5),TurboStorage=function(e){var n=e;return{uploadFile:function(e){return new Promise(function(r,t){if(null==e)return void t(new Error("Missing file"));if(null==e.name)return void t(new Error("Missing file name"));if(null==e.type)return void t(new Error("Missing file type"));var i={site:n.site_id,exec:"upload-string",filename:e.name,filetype:e.type};superagent.post(n.base_url+"/functions").send(i).set("Content-Type","application/json").end(function(i,o){if(i)return void t(i);var s=o.body;if("success"!=s.confirmation)return void t(new Error(s.message));var u=s.result;if(-1==e.type.indexOf("image"))return void superagent.put(u).send(e).set("Content-Type",e.type).end(function(i,o){if(i)return void t(i);var u={site:n.site_id,name:e.name,type:e.type,size:e.size,url:"https://storage.turbo360.co/"+s.site.slug+"/"+e.name};superagent.post(n.turbo_url+"/api/blob").send(u).set("Accept","application/json").end(function(e,n){if(e)return void t(e);r(n.body)})});var a=superagent.post(u);a.attach("file",e),a.end(function(i,o){if(i)return void t(i);var s=o.body.image,u={site:n.site_id,name:e.name,type:e.type,size:e.size,url:s.address};superagent.post(n.turbo_url+"/api/blob").send(u).set("Accept","application/json").end(function(e,n){if(e)return void t(e);r(n.body)})})})})}}};module.exports=TurboStorage;
 
 /***/ }),
 /* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Promise=__webpack_require__(1),superagent=__webpack_require__(2),helper=__webpack_require__(4),TurboDatastore=function(e){var r=e,t=function(r,t){return null==t&&(t={}),new Promise(function(n,o){if(0==helper.validateSiteId(e))return void o(new Error("Please Set Your TURBO_APP_ID"));var i=r.toLowerCase().trim();superagent.get(e.base_url+"/api/"+i).query(t).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void o(e);if("fail"==r.body.confirmation)return void o(new Error(r.body.message));var t=r.body.results;n(t)})})},n=function(r,t){return new Promise(function(n,o){if(0==helper.validateSiteId(e))return void o(new Error("Please Set Your TURBO_APP_ID"));var i=r.toLowerCase().trim();superagent.get(e.base_url+"/api/"+i+"/"+t).query(null).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void o(e);if("fail"==r.body.confirmation)return void o(new Error(r.body.message));var t=r.body.result;n(t)})})},o=function(t,n){return new Promise(function(o,i){if(0==helper.validateSiteId(e))return void i(new Error("Please Set Your TURBO_APP_ID"));if(null==n)return void i(new Error("Post parameters required."));n.site=r.site_id;var a=t.toLowerCase().trim();superagent.post(e.base_url+"/api/"+a).send(n).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void i(e);if("fail"==r.body.confirmation)return void i(new Error(r.body.message));var t=r.body.result||r.body.results;o(t)})})},i=function(r,t,n){return new Promise(function(o,i){if(0==helper.validateSiteId(e))return void i(new Error("Please Set Your TURBO_APP_ID"));if(null==n)return void i(new Error("Updated parameters required."));var a=r.toLowerCase().trim();superagent.put(e.base_url+"/api/"+a+"/"+t).send(n).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void i(e);if("fail"==r.body.confirmation)return void i(new Error(r.body.message));var t=r.body.result||r.body.results;o(t)})})},a=function(r,t){return new Promise(function(n,o){if(0==helper.validateSiteId(e))return void o(new Error("Please Set Your TURBO_APP_ID"));var i=r.toLowerCase().trim();superagent.delete(e.base_url+"/api/"+i+"/"+t).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void o(e);if("fail"==r.body.confirmation)return void o(new Error(r.body.message));var t=r.body.result||r.body.results;n(t)})})};return{fetch:t,fetchOne:n,create:o,update:function(r,t,n){return new Promise(function(o,i){if(0==helper.validateSiteId(e))return void i(new Error("Please Set Your TURBO_APP_ID"));if(null==n)return void i(new Error("Post parameters required."));Object.keys(n).forEach(function(e,r){var o=n[e];t[e]=o});var a=r.toLowerCase().trim();superagent.put(e.base_url+"/api/"+a+"/"+t.id).send(t).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void i(e);if("fail"==r.body.confirmation)return void i(new Error(r.body.message));var t=r.body.result||r.body.results;o(t)})})},remove:function(r,t){return new Promise(function(n,o){if(0==helper.validateSiteId(e))return void o(new Error("Please Set Your TURBO_APP_ID"));var i=r.toLowerCase().trim();superagent.delete(e.base_url+"/api/"+i+"/"+t.id).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void o(e);if("fail"==r.body.confirmation)return void o(new Error(r.body.message));var t=r.body.result||r.body.results;n(t)})})},updateEntity:i,removeEntity:a}};module.exports=TurboDatastore;
+var Promise=__webpack_require__(1),superagent=__webpack_require__(2),helper=__webpack_require__(5),TurboDatastore=function(e){var r=e,t=function(r,t){return null==t&&(t={}),new Promise(function(n,o){if(0==helper.validateSiteId(e))return void o(new Error("Please Set Your TURBO_APP_ID"));var i=r.toLowerCase().trim();superagent.get(e.base_url+"/api/"+i).query(t).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void o(e);if("fail"==r.body.confirmation)return void o(new Error(r.body.message));var t=r.body.results;n(t)})})},n=function(r,t){return new Promise(function(n,o){if(0==helper.validateSiteId(e))return void o(new Error("Please Set Your TURBO_APP_ID"));var i=r.toLowerCase().trim();superagent.get(e.base_url+"/api/"+i+"/"+t).query(null).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void o(e);if("fail"==r.body.confirmation)return void o(new Error(r.body.message));var t=r.body.result;n(t)})})},o=function(t,n){return new Promise(function(o,i){if(0==helper.validateSiteId(e))return void i(new Error("Please Set Your TURBO_APP_ID"));if(null==n)return void i(new Error("Post parameters required."));n.site=r.site_id;var a=t.toLowerCase().trim();superagent.post(e.base_url+"/api/"+a).send(n).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void i(e);if("fail"==r.body.confirmation)return void i(new Error(r.body.message));var t=r.body.result||r.body.results;o(t)})})},i=function(r,t,n){return new Promise(function(o,i){if(0==helper.validateSiteId(e))return void i(new Error("Please Set Your TURBO_APP_ID"));if(null==n)return void i(new Error("Updated parameters required."));var a=r.toLowerCase().trim();superagent.put(e.base_url+"/api/"+a+"/"+t).send(n).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void i(e);if("fail"==r.body.confirmation)return void i(new Error(r.body.message));var t=r.body.result||r.body.results;o(t)})})},a=function(r,t){return new Promise(function(n,o){if(0==helper.validateSiteId(e))return void o(new Error("Please Set Your TURBO_APP_ID"));var i=r.toLowerCase().trim();superagent.delete(e.base_url+"/api/"+i+"/"+t).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void o(e);if("fail"==r.body.confirmation)return void o(new Error(r.body.message));var t=r.body.result||r.body.results;n(t)})})};return{fetch:t,fetchOne:n,create:o,update:function(r,t,n){return new Promise(function(o,i){if(0==helper.validateSiteId(e))return void i(new Error("Please Set Your TURBO_APP_ID"));if(null==n)return void i(new Error("Post parameters required."));Object.keys(n).forEach(function(e,r){var o=n[e];t[e]=o});var a=r.toLowerCase().trim();superagent.put(e.base_url+"/api/"+a+"/"+t.id).send(t).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void i(e);if("fail"==r.body.confirmation)return void i(new Error(r.body.message));var t=r.body.result||r.body.results;o(t)})})},remove:function(r,t){return new Promise(function(n,o){if(0==helper.validateSiteId(e))return void o(new Error("Please Set Your TURBO_APP_ID"));var i=r.toLowerCase().trim();superagent.delete(e.base_url+"/api/"+i+"/"+t.id).set(helper.standardHeaders(e)).end(function(e,r){if(e)return void o(e);if("fail"==r.body.confirmation)return void o(new Error(r.body.message));var t=r.body.result||r.body.results;n(t)})})},updateEntity:i,removeEntity:a}};module.exports=TurboDatastore;
 
 /***/ }),
 /* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Promise=__webpack_require__(1),superagent=__webpack_require__(2),helper=__webpack_require__(4),TurboEmail=function(e){var r=e;return{sendEmail:function(i){return new Promise(function(n,o){return null==e.site_id?void o(new Error("Please Set Your TURBO_APP_ID")):e.site_id.length<20?void o(new Error("Please Set Your TURBO_APP_ID")):null==i?void o(new Error("Post parameters required.")):(i.site=e.site_id,i.exec="sendemail",void superagent.post(r.base_url+"/functions").send(i).set("Accept","application/json").end(function(e,r){return e?void o(e):"fail"==r.body.confirmation?void o(new Error(r.body.message)):void n(r.body.result)}))})}}};module.exports=TurboEmail;
+var Promise=__webpack_require__(1),superagent=__webpack_require__(2),helper=__webpack_require__(5),TurboEmail=function(e){var r=e;return{sendEmail:function(i){return new Promise(function(n,o){return null==e.site_id?void o(new Error("Please Set Your TURBO_APP_ID")):e.site_id.length<20?void o(new Error("Please Set Your TURBO_APP_ID")):null==i?void o(new Error("Post parameters required.")):(i.site=e.site_id,i.exec="sendemail",void superagent.post(r.base_url+"/functions").send(i).set("Accept","application/json").end(function(e,r){return e?void o(e):"fail"==r.body.confirmation?void o(new Error(r.body.message)):void n(r.body.result)}))})}}};module.exports=TurboEmail;
 
 /***/ }),
 /* 99 */
@@ -29854,11 +29855,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(5);
+var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
 var _presentation = __webpack_require__(103);
+
+var _reactRedux = __webpack_require__(27);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29922,6 +29925,8 @@ var Sub = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
+            var posts = this.props.post.all || [];
+
             return _react2.default.createElement(
                 'div',
                 { className: 'container' },
@@ -29944,7 +29949,7 @@ var Sub = function (_Component) {
                                 null,
                                 'Title'
                             ),
-                            this.state.posts.map(function (post, i) {
+                            posts.map(function (post, i) {
                                 return _react2.default.createElement(_presentation.Preview, _extends({}, post, { key: i }));
                             })
                         )
@@ -29975,7 +29980,19 @@ var Sub = function (_Component) {
     return Sub;
 }(_react.Component);
 
-exports.default = Sub;
+var stateToProps = function stateToProps(state) {
+    return {
+        post: state.post
+    };
+};
+
+// const dispatchToProps = (dispatch) => {
+//     return {
+
+//     }
+// }  
+
+exports.default = (0, _reactRedux.connect)(stateToProps)(Sub);
 
 /***/ }),
 /* 103 */
@@ -30008,7 +30025,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _react = __webpack_require__(5);
+var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -30036,6 +30053,35 @@ exports.default = function (props) {
 			props.text
 		)
 	);
+};
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+var initialState = {
+	all: [{ title: 'iPhone X Released!', text: 'check out the new iPhone X' }]
+};
+
+exports.default = function () {
+	var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+	var action = arguments[1];
+
+	var updated = Object.assign({}, state);
+	switch (action.type) {
+		case 'POST_ADDED':
+			console.log('POST_ADDED: ' + JSON.stringify(action.data));
+			return updated;
+
+		default:
+			return updated;
+	}
 };
 
 /***/ })

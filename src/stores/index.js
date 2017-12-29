@@ -1,13 +1,7 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
-import { userReducer } from '../reducers'
+import { userReducer, postReducer } from '../reducers'
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * *
-	This is a store with one reducer: userReducer. When 
-	adding more reducers, make sure to include them in 
-	line 3 (above) and line 18 (below):
-* * * * * * * * * * * * * * * * * * * * * * * * * * * *
-*/
 
 var store
 export default {
@@ -15,7 +9,8 @@ export default {
 	configure: (initialState) => { // initialState can be null
 		
 		const reducers = combineReducers({ // insert reducers here
-			user: userReducer
+			user: userReducer,
+			post: postReducer
 		})
 
 		if (initialState){

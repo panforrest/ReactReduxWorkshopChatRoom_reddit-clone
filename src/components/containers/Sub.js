@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Preview } from '../presentation'
+import { connect } from 'react-redux'
 
 class Sub extends Component {
     constructor(){
@@ -51,6 +52,8 @@ class Sub extends Component {
     }
 
 	render(){
+        const posts = this.props.post.all || []
+
 		return(
 		  <div className="container">
             <div className="row">
@@ -60,7 +63,7 @@ class Sub extends Component {
 	                <div>
 	                    <h3>Title</h3>
 
-                        { this.state.posts.map((post, i) => {
+                        { posts.map((post, i) => {
                             return <Preview {...post} key={i} />
                             })
                         }
@@ -80,4 +83,16 @@ class Sub extends Component {
 	}
 }
 
-export default Sub
+const stateToProps = (state) => {
+    return {
+        post: state.post
+    }
+}
+
+// const dispatchToProps = (dispatch) => {
+//     return {
+        
+//     }
+// }  
+
+export default connect(stateToProps)(Sub)
