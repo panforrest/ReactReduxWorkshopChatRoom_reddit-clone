@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Preview } from '../presentation'
 import { connect } from 'react-redux'
+import actions from '../../actions'
 
 class Sub extends Component {
     constructor(){
@@ -10,13 +11,13 @@ class Sub extends Component {
     			title: '',
                 text: ''
     		},
-    		posts: [
-    		    {title:'iPhone X Released!', text:'check out the new iPhone X'},
-    		    {title:'Elon Musk Elected President', text:'Beat Trump by 90%'},
-    		    {title:'Elone Musk !', text:'check out the new iPhone X'},
-    		    {title:'iPhone X Released!', text:'check out the new iPhone X'},
-    		    {title:'iPhone X Released!', text:'check out the new iPhone X'},
-    		]
+    		// posts: [
+    		//     {title:'iPhone X Released!', text:'check out the new iPhone X'},
+    		//     {title:'Elon Musk Elected President', text:'Beat Trump by 90%'},
+    		//     {title:'Elone Musk !', text:'check out the new iPhone X'},
+    		//     {title:'iPhone X Released!', text:'check out the new iPhone X'},
+    		//     {title:'iPhone X Released!', text:'check out the new iPhone X'},
+    		// ]
     	}
     }
 
@@ -44,11 +45,12 @@ class Sub extends Component {
 
     submitPost(){
         console.log('submitPost: '+JSON.stringify(this.state.nextPost))
-        let updatedPosts = Object.assign([], this.state.posts)
-        updatedPosts.push(this.state.nextPost)
-        this.setState({
-        	posts: updatedPosts
-        }) 
+        // let updatedPosts = Object.assign([], this.state.posts)
+        // updatedPosts.push(this.state.nextPost)
+        // this.setState({
+        // 	posts: updatedPosts
+        // }) 
+        this.props.addPost(this.state.nextPost)
     }
 
 	render(){
@@ -89,10 +91,10 @@ const stateToProps = (state) => {
     }
 }
 
-// const dispatchToProps = (dispatch) => {
-//     return {
-        
-//     }
-// }  
+const dispatchToProps = (dispatch) => {
+    return {
+        addPost: (data) => dispatch(actions.addPost(data))
+    }
+}  
 
-export default connect(stateToProps)(Sub)
+export default connect(stateToProps, dispatchToProps)(Sub)

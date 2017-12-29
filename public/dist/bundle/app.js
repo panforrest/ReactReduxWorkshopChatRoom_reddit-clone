@@ -28191,35 +28191,42 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
 
-	fetchUsers: function fetchUsers(params) {
-		return function (dispatch) {
-			return dispatch(_utils.TurboClient.getRequest('user', params, _constants2.default.USERS_RECEIVED));
-		};
-	},
+	// fetchUsers: (params) => {
+	// 	return dispatch => {
+	// 		return dispatch(TurboClient.getRequest('user', params, constants.USERS_RECEIVED))
+	// 	}
+	// },
 
-	addUser: function addUser(params) {
-		return function (dispatch) {
-			return dispatch(_utils.TurboClient.postRequest('user', params, _constants2.default.USER_CREATED));
-		};
-	},
+	// addUser: (params) => {
+	// 	return dispatch => {
+	// 		return dispatch(TurboClient.postRequest('user', params, constants.USER_CREATED))
+	// 	}
+	// },
 
-	// Unlike addUser, register() also maintains a session for login state. After calling 
-	// TurboClient.createUser(), the new user is logged in as well:
-	register: function register(params) {
-		return function (dispatch) {
-			return dispatch(_utils.TurboClient.createUser(params, _constants2.default.USER_CREATED));
-		};
-	},
+	// // Unlike addUser, register() also maintains a session for login state. After calling 
+	// // TurboClient.createUser(), the new user is logged in as well:
+	// register: (params) => {
+	// 	return dispatch => {
+	// 		return dispatch(TurboClient.createUser(params, constants.USER_CREATED))
+	// 	}
+	// },
 
-	loginUser: function loginUser(credentials) {
-		return function (dispatch) {
-			return dispatch(_utils.TurboClient.login(credentials, _constants2.default.CURRENT_USER_RECEIVED));
-		};
-	},
+	// loginUser: (credentials) => {
+	// 	return dispatch => {
+	// 		return dispatch(TurboClient.login(credentials, constants.CURRENT_USER_RECEIVED))
+	// 	}
+	// },
 
-	currentUser: function currentUser() {
-		return function (dispatch) {
-			return dispatch(_utils.TurboClient.currentUser(_constants2.default.CURRENT_USER_RECEIVED));
+	// currentUser: () => {
+	// 	return dispatch => {
+	// 		return dispatch(TurboClient.currentUser(constants.CURRENT_USER_RECEIVED))
+	// 	}
+	// }
+
+	addPost: function addPost(post) {
+		return {
+			type: 'POST_ADDED',
+			data: post
 		};
 	}
 
@@ -29863,6 +29870,10 @@ var _presentation = __webpack_require__(103);
 
 var _reactRedux = __webpack_require__(27);
 
+var _actions = __webpack_require__(81);
+
+var _actions2 = _interopRequireDefault(_actions);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29883,8 +29894,14 @@ var Sub = function (_Component) {
             nextPost: {
                 title: '',
                 text: ''
-            },
-            posts: [{ title: 'iPhone X Released!', text: 'check out the new iPhone X' }, { title: 'Elon Musk Elected President', text: 'Beat Trump by 90%' }, { title: 'Elone Musk !', text: 'check out the new iPhone X' }, { title: 'iPhone X Released!', text: 'check out the new iPhone X' }, { title: 'iPhone X Released!', text: 'check out the new iPhone X' }]
+            }
+            // posts: [
+            //     {title:'iPhone X Released!', text:'check out the new iPhone X'},
+            //     {title:'Elon Musk Elected President', text:'Beat Trump by 90%'},
+            //     {title:'Elone Musk !', text:'check out the new iPhone X'},
+            //     {title:'iPhone X Released!', text:'check out the new iPhone X'},
+            //     {title:'iPhone X Released!', text:'check out the new iPhone X'},
+            // ]
         };
         return _this;
     }
@@ -29916,11 +29933,12 @@ var Sub = function (_Component) {
         key: 'submitPost',
         value: function submitPost() {
             console.log('submitPost: ' + JSON.stringify(this.state.nextPost));
-            var updatedPosts = Object.assign([], this.state.posts);
-            updatedPosts.push(this.state.nextPost);
-            this.setState({
-                posts: updatedPosts
-            });
+            // let updatedPosts = Object.assign([], this.state.posts)
+            // updatedPosts.push(this.state.nextPost)
+            // this.setState({
+            // 	posts: updatedPosts
+            // }) 
+            this.props.addPost(this.state.nextPost);
         }
     }, {
         key: 'render',
@@ -29986,13 +30004,15 @@ var stateToProps = function stateToProps(state) {
     };
 };
 
-// const dispatchToProps = (dispatch) => {
-//     return {
+var dispatchToProps = function dispatchToProps(dispatch) {
+    return {
+        addPost: function addPost(data) {
+            return dispatch(_actions2.default.addPost(data));
+        }
+    };
+};
 
-//     }
-// }  
-
-exports.default = (0, _reactRedux.connect)(stateToProps)(Sub);
+exports.default = (0, _reactRedux.connect)(stateToProps, dispatchToProps)(Sub);
 
 /***/ }),
 /* 103 */
